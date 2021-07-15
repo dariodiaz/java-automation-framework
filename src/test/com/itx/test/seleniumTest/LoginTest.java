@@ -1,6 +1,8 @@
 package com.itx.test.seleniumTest;
 
 import com.itx.test.pages.LoginPage;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -22,5 +24,10 @@ public class LoginTest {
     public void Login() {
         LoginPage page = new LoginPage(_driver);
         page.Login("admin", "admin");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        _driver.quit();
     }
 }
