@@ -1,5 +1,7 @@
 package com.itx.test.seleniumTest;
 
+import com.itx.framework.base.DriverContext;
+import com.itx.test.pages.HomePage;
 import com.itx.test.pages.LoginPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -11,23 +13,23 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LoginTest {
 
-    private WebDriver _driver = null;
-
     @BeforeEach
     public void Initialize() {
         System.setProperty("webdriver.gecko.driver", "/home/dario/Code/Automation/itx-automation-framework-with-selenium/UdemyCourse_Design/UdemyCourse/src/test/geckodriver");
-        _driver = new FirefoxDriver();
-        _driver.navigate().to("http://executeautomation.com/demosite/Login.html");
+        DriverContext.Driver = new FirefoxDriver();
+        DriverContext.Driver.navigate().to("http://eaapp.somee.com/");
     }
 
     @Test
-    public void Login() {
-        LoginPage page = new LoginPage(_driver);
-        page.Login("admin", "admin");
+    public void Login() throws InterruptedException {
+        HomePage homePage = new HomePage();
+        LoginPage loginPage = homePage.clickLogin();
+        Thread.sleep(2000);
+        loginPage.Login("admin", "password");
     }
 
     @AfterEach
     public void tearDown() {
-        _driver.quit();
+        DriverContext.Driver.quit();
     }
 }
