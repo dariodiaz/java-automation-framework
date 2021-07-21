@@ -1,17 +1,17 @@
 package com.itx.test.seleniumTest;
 
+
+import com.itx.framework.base.Base;
 import com.itx.framework.base.DriverContext;
 import com.itx.test.pages.HomePage;
 import com.itx.test.pages.LoginPage;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class LoginTest {
+
+public class LoginTest extends Base {
 
     @BeforeEach
     public void Initialize() {
@@ -23,9 +23,9 @@ public class LoginTest {
     @Test
     public void Login() throws InterruptedException {
         HomePage homePage = new HomePage();
-        LoginPage loginPage = homePage.clickLogin();
+        CurrentPage = homePage.clickLogin();
         Thread.sleep(2000);
-        loginPage.Login("admin", "password");
+        ((LoginPage) CurrentPage).Login("admin", "password");
     }
 
     @AfterEach
