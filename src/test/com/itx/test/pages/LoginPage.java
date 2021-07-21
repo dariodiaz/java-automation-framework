@@ -25,6 +25,6 @@ public class LoginPage extends BasePage {
         txtUserName.sendKeys(userName);
         txtPassword.sendKeys(password);
         btnLogin.submit();
-        return new HomePage();
+        return GetInstance(HomePage.class);
     }
 }

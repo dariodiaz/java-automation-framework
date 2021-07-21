@@ -19,6 +19,6 @@ public class HomePage extends BasePage {
 
     public LoginPage clickLogin() {
         lnkLogin.click();
-        return new LoginPage();
+        return GetInstance(LoginPage.class);
     }
 }

@@ -22,7 +22,7 @@ public class LoginTest extends Base {
 
     @Test
     public void Login() throws InterruptedException {
-        // HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage();
         CurrentPage = homePage.clickLogin();
         Thread.sleep(2000);
         ((LoginPage) CurrentPage).Login("admin", "password");
