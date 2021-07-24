@@ -7,6 +7,10 @@ public class Browser {
     private WebDriver _driver;
     public BrowserType Type;
 
+    public Browser(WebDriver _driver) {
+        this._driver = _driver;
+    }
+
     public void GoToUrl(String url) {
         _driver.get(url);
     }
