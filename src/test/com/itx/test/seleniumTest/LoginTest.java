@@ -17,6 +17,7 @@ public class LoginTest extends FrameworkInitialize {
     @BeforeEach
     public void Initialize() {
         InitializeBrowser(BrowserType.Firefox);
+        DriverContext.Browser.GoToUrl("http://eaapp.somee.com/");
     }
 
     @Test

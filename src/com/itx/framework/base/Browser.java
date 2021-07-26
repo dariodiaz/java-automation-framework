@@ -7,8 +7,8 @@ public class Browser {
     private WebDriver _driver;
     public BrowserType Type;
 
-    public Browser(WebDriver _driver) {
-        this._driver = _driver;
+    public Browser(WebDriver driver) {
+        _driver = driver;
     }
 
     public void GoToUrl(String url) {
