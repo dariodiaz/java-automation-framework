@@ -25,7 +25,8 @@ public class LoginTest extends FrameworkInitialize {
         CurrentPage = GetInstance(HomePage.class);
         CurrentPage = CurrentPage.As(HomePage.class).clickLogin();
         Thread.sleep(2000);
-        ((LoginPage) CurrentPage).Login("admin", "password");
+        // Hardcoded
+        CurrentPage.As(LoginPage.class).Login("admin", "password");
     }
 
     @AfterEach
