@@ -12,8 +12,7 @@ public class ExcelUtil {
     static Sheet wrksheet;
     static Workbook wrkbook =null;
     static Hashtable dict= new Hashtable();
-
-    //Create a Constructor
+    
     public ExcelUtil(String fileName, String sheetName) throws BiffException, IOException {
 
         ExcelDataFile xlsDataFile = new ExcelDataFile(fileName);
