@@ -12,6 +12,7 @@ public class LogUtil {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
     String fileNameFormat = date.format(formatter);
 
+
     private BufferedWriter bufferedWriter = null;
 
     //Create log file
