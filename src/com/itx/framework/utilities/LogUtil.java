@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class LogUtil {
 
     ZonedDateTime date =  ZonedDateTime.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyyHHMMSS");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
     String fileNameFormat = date.format(formatter);
 
     private BufferedWriter bufferedWriter = null;
@@ -22,7 +22,7 @@ public class LogUtil {
                 dir.mkdir();
 
             //Create file
-            File logFile = new File(dir + "/" + fileNameFormat);
+            File logFile = new File(dir + "/" + fileNameFormat + ".log");
             FileWriter fileWriter = new FileWriter(logFile.getAbsoluteFile());
             bufferedWriter = new BufferedWriter(fileWriter);
         } catch(Exception e) {

@@ -6,6 +6,7 @@ import com.itx.framework.base.DriverContext;
 import com.itx.framework.base.FrameworkInitialize;
 
 import com.itx.framework.utilities.ExcelUtil;
+import com.itx.framework.utilities.LogUtil;
 import com.itx.test.pages.HomePage;
 import com.itx.test.pages.LoginPage;
 import jxl.read.biff.BiffException;
@@ -20,6 +21,10 @@ public class LoginTest extends FrameworkInitialize {
 
     @BeforeEach
     public void Initialize() throws BiffException, IOException {
+        LogUtil logUtil = new LogUtil();
+        logUtil.CreateLogFile();
+        logUtil.Write("Framework Initialize");
+
         InitializeBrowser(BrowserType.Firefox);
         DriverContext.Browser.GoToUrl("http://eaapp.somee.com/");
         ExcelUtil util = new ExcelUtil("data.xls","login");

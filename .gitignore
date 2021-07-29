@@ -5,3 +5,4 @@ src/test/geckodriver
 .project
 UdemyCourse.iml
 target
+src/test/resources/Logs
